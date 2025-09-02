@@ -2,32 +2,207 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>About Me</title>
-    <link rel="stylesheet" href="styles.css" />
+    <style>
+      /* Reset */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      /* Base */
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #6b73ff 0%, #000dff 100%);
+        color: #f0f4ff;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 40px 20px;
+      }
+
+      /* Container */
+      .container {
+        background: #1a1f4a;
+        max-width: 900px;
+        width: 100%;
+        padding: 40px;
+        border-radius: 16px;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+      }
+
+      /* Profile section */
+      .profile {
+        display: flex;
+        align-items: center;
+        gap: 40px;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .profile .image {
+        flex: 0 0 180px;
+        max-width: 180px;
+      }
+
+      .profile .image img {
+        width: 180px;
+        height: 180px;
+        object-fit: cover;
+        border-radius: 50%;
+        border: 4px solid #ffb703;
+        box-shadow: 0 4px 15px rgba(255, 183, 3, 0.7);
+        transition: transform 0.3s ease;
+      }
+      .profile .image img:hover {
+        transform: scale(1.05);
+      }
+
+      .profile .info {
+        flex: 1;
+        min-width: 280px;
+      }
+
+      .profile .info h1 {
+        font-size: 2.5rem;
+        margin-bottom: 12px;
+        color: #ffb703;
+        text-shadow: 0 2px 6px rgba(255, 183, 3, 0.8);
+      }
+
+      .profile .info p {
+        font-size: 1.15rem;
+        line-height: 1.6;
+        color: #dbeafe;
+        margin-bottom: 15px;
+      }
+
+      .profile .info strong {
+        color: #facc15;
+      }
+
+      .profile .info em {
+        font-style: italic;
+        color: #a5b4fc;
+      }
+
+      /* Skills */
+      .skills {
+        margin-top: 50px;
+      }
+
+      .skills h2 {
+        font-size: 2rem;
+        margin-bottom: 24px;
+        color: #ffb703;
+        text-align: center;
+        text-shadow: 0 2px 6px rgba(255, 183, 3, 0.8);
+      }
+
+      .skill-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+        list-style: none;
+      }
+
+      .skill-list li {
+        background: #28315a;
+        padding: 12px 24px;
+        border-radius: 50px;
+        font-weight: 600;
+        font-size: 1.1rem;
+        color: #e0e7ff;
+        box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+        transition: background 0.3s ease, transform 0.3s ease;
+        cursor: default;
+      }
+
+      .skill-list li:hover {
+        background: #ffb703;
+        color: #1a1f4a;
+        transform: scale(1.1);
+        box-shadow: 0 6px 20px rgba(255, 183, 3, 0.7);
+      }
+
+      /* Skill colors (optional colorful variants) */
+      .skill-html {
+        background: #e44d26;
+        box-shadow: 0 3px 10px rgba(228, 77, 38, 0.7);
+      }
+      .skill-css {
+        background: #1572b6;
+        box-shadow: 0 3px 10px rgba(21, 114, 182, 0.7);
+      }
+      .skill-js {
+        background: #f7df1e;
+        color: #1a1f4a;
+        box-shadow: 0 3px 10px rgba(247, 223, 30, 0.7);
+      }
+      .skill-react {
+        background: #61dafb;
+        color: #1a1f4a;
+        box-shadow: 0 3px 10px rgba(97, 218, 251, 0.7);
+      }
+      .skill-node {
+        background: #3c873a;
+        box-shadow: 0 3px 10px rgba(60, 135, 58, 0.7);
+      }
+
+      /* Responsive */
+      @media (max-width: 720px) {
+        .profile {
+          flex-direction: column;
+          text-align: center;
+        }
+        .profile .image {
+          margin-bottom: 20px;
+        }
+        .skills h2 {
+          font-size: 1.7rem;
+        }
+        .skill-list li {
+          font-size: 1rem;
+          padding: 10px 20px;
+        }
+      }
+    </style>
   </head>
   <body>
-    <section class="about">
+    <section class="about-section">
       <div class="container">
-        <h1 class="title">About Me</h1>
-        <div class="content">
-          <p>
-            Hi, I'm <strong>Saripada, Abdel-Arip</strong> — a passionate
-            <em>Web Developer</em> who enjoys building elegant, user-focused
-            digital experiences. My goal is to create clean, responsive websites
-            that offer a seamless user experience.
-          </p>
-          <p>
-            With skills in <span class="highlight">HTML</span>,
-            <span class="highlight">CSS</span>,
-            <span class="highlight">JavaScript</span>, and modern frameworks, I
-            enjoy turning ideas into reality through code.
-          </p>
-          <p>
-            Outside of coding, I enjoy
-            <em>reading, hiking, and exploring new technologies</em>. I'm always
-            open to learning new things and collaborating with others.
-          </p>
+        <div class="profile">
+          <div class="image">
+            <img src="./airon.jpg" alt="pogi" />
+          </div>
+          <div class="info">
+            <h1>Hello, I'm <span>Saripada, Abdel-Arip</span></h1>
+            <p>
+              I'm a passionate <strong>Web Developer</strong> who loves building
+              clean, responsive, and engaging websites. With a focus on user
+              experience and performance, I aim to create designs that not only
+              look good but also function smoothly.
+            </p>
+            <p>
+              Outside of work, I enjoy
+              <em>design, gaming, reading, and exploring new technologies</em>.
+            </p>
+          </div>
+        </div>
+
+        <div class="skills">
+          <h2>Skills</h2>
+          <ul class="skill-list">
+            <li class="skill-html">HTML</li>
+            <li class="skill-css">CSS</li>
+            <li class="skill-js">JavaScript</li>
+            <li class="skill-react">React</li>
+            <li class="skill-node">Node.js</li>
+          </ul>
         </div>
       </div>
     </section>
